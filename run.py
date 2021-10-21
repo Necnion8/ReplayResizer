@@ -4,7 +4,8 @@ from pathlib import Path
 
 
 if __name__ == '__main__':
-    os.chdir(Path(sys.argv[0]).parent)
+    app_dir = Path(sys.argv[0]).parent
+    os.chdir(app_dir)
 
     import wx
 
@@ -18,7 +19,7 @@ if __name__ == '__main__':
 
     from replayresizer.replayresizer import ReplayResizer
 
-    main = ReplayResizer(app)
+    main = ReplayResizer(app, app_directory=app_dir)
     main.setup_logging()
     main.launch(sys.argv[1:])
     app.MainLoop()

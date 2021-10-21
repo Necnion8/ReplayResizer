@@ -24,7 +24,7 @@ from replayresizer.tools import *
 
 CONFIG_FILE = Path("appconfig.json")
 FRAME_TITLE = "リプレイリサイザ"
-VERSION = "1.0.0/210512"
+VERSION = "1.0.1/211021"
 TB_MENU_EXIT = wx.NewId()
 TB_MENU_PAUSE = wx.NewId()
 TB_MENU_OPEN_SETTINGS = wx.NewId()
@@ -36,9 +36,10 @@ log = getLogger(__name__)
 
 
 class ReplayResizer(FileSystemEventHandler):
-    def __init__(self, app: wx.App):
+    def __init__(self, app: wx.App, app_directory: Path):
         self.app = app
-        self.config = AppConfiguration(CONFIG_FILE)
+        self.app_directory = app_directory
+        self.config = AppConfiguration(app_directory / CONFIG_FILE)
         self.script = OrderScriptManager()
         # create taskbar
         self.taskbar = TaskBar()

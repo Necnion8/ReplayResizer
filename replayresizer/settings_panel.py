@@ -36,7 +36,7 @@ class SettingsFrame(layout.SettingsPanel):
 
         elif event.GetEventObject() is self.btn_dir_input:
             default = self.tc_dir_input.GetValue() or wx.EmptyString
-            dialog = wx.DirDialog(self, defaultPath=default, style=wx.DD_DIR_MUST_EXIST | wx.DD_CHANGE_DIR)
+            dialog = wx.DirDialog(self, defaultPath=default, style=wx.DD_DIR_MUST_EXIST)
 
             if dialog.ShowModal() == wx.ID_OK:
                 value = str(dialog.GetPath())
@@ -47,7 +47,7 @@ class SettingsFrame(layout.SettingsPanel):
 
         elif event.GetEventObject() is self.btn_dir_output:
             default = self.tc_dir_output.GetValue() or wx.EmptyString
-            dialog = wx.DirDialog(self, defaultPath=default, style=wx.DD_DIR_MUST_EXIST | wx.DD_CHANGE_DIR)
+            dialog = wx.DirDialog(self, defaultPath=default, style=wx.DD_DIR_MUST_EXIST)
 
             if dialog.ShowModal() == wx.ID_OK:
                 value = str(dialog.GetPath())
@@ -58,7 +58,7 @@ class SettingsFrame(layout.SettingsPanel):
 
         elif event.GetEventObject() is self.btn_ffmpeg:
             default = self.tc_ffmpeg.GetValue() or wx.EmptyString
-            dialog = wx.FileDialog(self, defaultFile=default, style=wx.FD_FILE_MUST_EXIST | wx.FD_CHANGE_DIR)
+            dialog = wx.FileDialog(self, defaultFile=default, style=wx.FD_FILE_MUST_EXIST)
 
             if dialog.ShowModal() == wx.ID_OK:
                 value = str(dialog.GetPath())
@@ -69,7 +69,7 @@ class SettingsFrame(layout.SettingsPanel):
 
         elif event.GetEventObject() is self.btn_ffprobe:
             default = self.tc_ffprobe.GetValue() or wx.EmptyString
-            dialog = wx.FileDialog(self, defaultFile=default, style=wx.FD_FILE_MUST_EXIST | wx.FD_CHANGE_DIR)
+            dialog = wx.FileDialog(self, defaultFile=default, style=wx.FD_FILE_MUST_EXIST)
 
             if dialog.ShowModal() == wx.ID_OK:
                 value = str(dialog.GetPath())
