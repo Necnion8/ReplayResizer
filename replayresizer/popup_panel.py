@@ -97,9 +97,9 @@ class PopupPanel(layout.PopupPanel, KeyHandler):
 
                 bitmap = wx.Bitmap(width=size[0], height=size[1])
 
-                if Path("wallpaper.png").is_file():
+                if Path(self.app.app_directory / "wallpaper.png").is_file():
                     try:
-                        img = wx.Image("wallpaper.png")
+                        img = wx.Image(str(self.app.app_directory / "wallpaper.png"))
                         img = img.Scale(*size)  # type: wx.Image
                         bitmap = img.ConvertToBitmap()
 
