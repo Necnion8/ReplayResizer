@@ -51,7 +51,7 @@ class AppConfiguration(object):
         self.auto_close_delay = 5
         self.auto_close_when = 0
         # encode
-        self.size_limit = 8170
+        self.size_limit = 24950
         self.hq_bitrate = 1200
         self.ulq_bitrate = 260
         self.normalized_volume = True
