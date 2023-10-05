@@ -24,7 +24,7 @@ from replayresizer.tools import *
 
 CONFIG_FILE = Path("appconfig.json")
 FRAME_TITLE = "リプレイリサイザ"
-VERSION = "1.0.1/211021"
+VERSION = "1.0.2/231005"
 TB_MENU_EXIT = wx.NewId()
 TB_MENU_PAUSE = wx.NewId()
 TB_MENU_OPEN_SETTINGS = wx.NewId()
